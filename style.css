@@ -8,10 +8,6 @@
     display: flex;
 }
 
-.Move{
-    display: inline-block;
-    margin-left: 50px;
-}
 
 .Test{
     display:inline-block;
@@ -30,5 +26,17 @@
 .position{
     display: inline-block;
     flex-direction: column
+
+}
+
+.hide{
+    display:none
+}
+
+.hide1{
+    display:none
+}
+
+.Start{
 
 }
