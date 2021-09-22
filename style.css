@@ -13,9 +13,17 @@
     display:inline-block;
     margin-left: 60px;
     margin-top: 100px;
+    flex-wrap: wrap;
 }
 
 .Style{
+    border-radius: 10px;
+    background-color:rgb(77, 6, 77);
+    color:white;
+    display: flex;
+    
+}
+.Style1{
     border-radius: 10px;
     background-color:rgb(77, 6, 77);
     color:white;
@@ -30,13 +38,21 @@
 }
 
 .hide{
-    display:none
+    display:none;
 }
 
 .hide1{
-    display:none
+    display:none;
 }
 
-.Start{
+#hide2{
+    display:none;
+}
+
+#On{
+    display: inline-block;
+    flex-direction: column;
+    margin-left: 60px;
+    margin-top: 100px;
 
 }
