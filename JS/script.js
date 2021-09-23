@@ -6,7 +6,7 @@ WrongRight=document.querySelector(".Opacity")
 end=""
 comment = document.getElementById("msg");
 submit=document.getElementById("save")
-secondsLeft = 5;
+secondsLeft = 90;
 
 
 Start.addEventListener('click',function(){
@@ -182,17 +182,17 @@ function final(){
 submit.addEventListener("click", function(event) {
   event.preventDefault();
   comment = document.getElementById("initials");
-  var studentGrade = {
+  var Player = {
     player: comment.value,
     score: finalseconds}
   
-  localStorage.setItem("studentGrade", JSON.stringify(studentGrade));
+  localStorage.setItem("Player", JSON.stringify(Player));
     renderMessage();
     highscore()
   });
 
 function renderMessage() {
-    var Highscore = JSON.parse(localStorage.getItem("studentGrade"));
+    var Highscore = JSON.parse(localStorage.getItem("Player"));
     document.querySelector(".message").textContent = Highscore.player+":"+ Highscore.score
     
   }
@@ -205,7 +205,7 @@ function renderMessage() {
 
 high=document.getElementById("Highscores")
 high.addEventListener('click', function(){
-  scores=JSON.parse(localStorage.getItem("studentGrade"));
+  scores=JSON.parse(localStorage.getItem("Player"));
   alert("The highscore is: " + scores.player+": " + scores.score)
 })
 
@@ -218,7 +218,7 @@ function setTime() {
     secondsLeft--;
     DisTime.textContent = "Time: " + secondsLeft;
 
-    if(secondsLeft === 0) {
+    if(secondsLeft <= 0) {
       // Stops execution of action at set interval
       clearInterval(timerInterval);
       // Calls function to create and append image
