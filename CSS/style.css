@@ -1,9 +1,11 @@
+/* This is making it so that the Time is displayed on the right uper corner */
 #time{
     float:right;
     display: flex;
 
 }
-
+/* This displays the 'View Highscores' in the top left with a white background and purple letters as well as larger font.
+    The inline-block allows things to be positioned horizontally to it. */
 #Highscores{
     display: inline-block;
     background-color: white;
@@ -12,57 +14,46 @@
     font-size: 30px;
 }
 
-
+/* This is displaying and positioning the entire section that contains the questions and answers. */
 .Test{
     display:inline-block;
     margin-left: 250px;
     margin-top: 100px;
     flex-wrap: wrap;
 }
-
+/* This is styling the buttons that are the answers in the quiz. The corners are being rounded and the background is changed to purple and the text to white.
+    It is blocked so that the answeres appear as a column and not next to each other. */
 .Style{
     border-radius: 10px;
     background-color:rgb(77, 6, 77);
     color:white;
-    display: flex;
+    display: block;
     
 }
+/* This is styling the button 'Start Quiz'. The corners are being rounded and the background is changed to purple and the text to white.*/
 .Style1{
     border-radius: 10px;
     background-color:rgb(77, 6, 77);
     color:white;
-    display: flex;
     
 }
-.Question{
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.position{
-    display: inline-block;
-    flex-direction: column;
-    flex-wrap: wrap;
-
-}
-
+/* This is used to hide and the inital starting section once the 'Start Quiz' button is pressed. */
 #hide{
     display:none;
 }
-
+/* This initally hides the section which is the quiz. */
 .hide1{
     display:none;
 }
-
+/* This initally hides the section which allows you to input your initials to save your score. */
 .hide2{
     display:none;
 }
-
+/* This initally hides the section which displays the Highscores at the end. */
 .hide3{
     display: none;
 }
-
+/* This initially displays and positions thw section with the "On" id. */
 #On{
     display: inline-block;
     flex-direction: column;
@@ -71,17 +62,18 @@
 
 }
 
+/* This creates the gray line below the answers.  */
 hr{
     border: 1px solid grey;
 }
-
+/* This displays and positions the section where you can save your score. */
 .Show{
     display: inline-block;
     flex-direction: column;
     margin-left: 250px;
     margin-top: 100px;
 }
-
+/* This styles the "SAVE" button in the section where you can save your score.  */
 #save{
     border-radius: 10px;
     background-color:rgb(77, 6, 77);
@@ -89,11 +81,12 @@ hr{
     display: flex;
 }
 
+/* This styles the textarea to input your intials. */
 #initials{
     background-color: black;
     color:white
 }
-
+/* This is displaying the final section where the highscore is displayed after finishing the quiz. */
 .Show1{
     display: inline-block;
     flex-direction: column;
