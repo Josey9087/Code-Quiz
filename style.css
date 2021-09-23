@@ -1,17 +1,21 @@
 #time{
     float:right;
+    display: flex;
 
 }
 
 #Highscores{
-    float:left;
-    display: flex;
+    display: inline-block;
+    background-color: white;
+    color:purple;
+    border-color: white;
+    font-size: 30px;
 }
 
 
 .Test{
     display:inline-block;
-    margin-left: 60px;
+    margin-left: 250px;
     margin-top: 100px;
     flex-wrap: wrap;
 }
@@ -30,14 +34,20 @@
     display: flex;
     
 }
+.Question{
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 
 .position{
     display: inline-block;
-    flex-direction: column
+    flex-direction: column;
+    flex-wrap: wrap;
 
 }
 
-.hide{
+#hide{
     display:none;
 }
 
@@ -45,14 +55,18 @@
     display:none;
 }
 
-#hide2{
+.hide2{
     display:none;
+}
+
+.hide3{
+    display: none;
 }
 
 #On{
     display: inline-block;
     flex-direction: column;
-    margin-left: 60px;
+    margin-left: 250px;
     margin-top: 100px;
 
 }
@@ -62,6 +76,25 @@ hr{
 }
 
 .Show{
+    display: inline-block;
+    flex-direction: column;
+    margin-left: 250px;
+    margin-top: 100px;
+}
+
+#save{
+    border-radius: 10px;
+    background-color:rgb(77, 6, 77);
+    color:white;
+    display: flex;
+}
+
+#initials{
+    background-color: black;
+    color:white
+}
+
+.Show1{
     display: inline-block;
     flex-direction: column;
     margin-left: 60px;

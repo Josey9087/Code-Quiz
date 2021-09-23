@@ -4,11 +4,15 @@ Quiz = document.getElementById("Test")
 questions1= document.getElementById("Questions")
 WrongRight=document.querySelector(".Opacity")
 end=""
+comment = document.getElementById("msg");
+submit=document.getElementById("save")
+secondsLeft = 5;
+
 
 Start.addEventListener('click',function(){
   setTime()
   start1=document.getElementById("On")
-  start2=start1.setAttribute('id', 'hide2')
+  start2=start1.setAttribute('id', 'hide')
   Show1 = document.querySelector(".hide1")
   go1=Show1.setAttribute('class', 'Test')
   first()
@@ -32,7 +36,6 @@ function first(){
   second()
 }
 
-var secondsLeft = 90;
 
 function second(){Quiz.addEventListener('click', function (event){
   questions1= document.getElementById("Questions")
@@ -149,7 +152,6 @@ function fifth(){ Quiz.addEventListener('click', function question(event){
 
 function sixth(){ Quiz.addEventListener('click', function question(event){
   questions1= document.getElementById("Questions")
-  end="Stop"
     if(questions1.textContent==questions1.getAttribute("data-5")){
       tar = event.target
       state5 = tar.getAttribute("data-5")
@@ -167,14 +169,45 @@ function sixth(){ Quiz.addEventListener('click', function question(event){
 }})};
 
 function final(){
+  finalseconds=secondsLeft
   hide=document.querySelector(".Test")
   hide1=hide.setAttribute('class', 'hide1')
-  show=document.querySelector(".hide")
+  show=document.querySelector(".hide2")
   show1=show.setAttribute('class', 'Show')
   score=document.querySelector(".score")
-  score.textContent="Your final score is: " +secondsLeft;
+  score.textContent="Your final score is: " + finalseconds;
 
 }
+
+submit.addEventListener("click", function(event) {
+  event.preventDefault();
+  comment = document.getElementById("initials");
+  var studentGrade = {
+    player: comment.value,
+    score: finalseconds}
+  
+  localStorage.setItem("studentGrade", JSON.stringify(studentGrade));
+    renderMessage();
+    highscore()
+  });
+
+function renderMessage() {
+    var Highscore = JSON.parse(localStorage.getItem("studentGrade"));
+    document.querySelector(".message").textContent = Highscore.player+":"+ Highscore.score
+    
+  }
+  function highscore(){
+  show=document.querySelector(".Show")
+  show1=show.setAttribute('class', 'hide2')
+  show2=document.querySelector(".hide3")
+  show12=show2.setAttribute('class', "Show1")
+  }
+
+high=document.getElementById("Highscores")
+high.addEventListener('click', function(){
+  scores=JSON.parse(localStorage.getItem("studentGrade"));
+  alert("The highscore is: " + scores.player+": " + scores.score)
+})
 
 
 
@@ -190,6 +223,7 @@ function setTime() {
       clearInterval(timerInterval);
       // Calls function to create and append image
       DisTime.textContent="Time: ";
+      final()
     }
     if(end=="Stop"){
       clearInterval(timerInterval)
